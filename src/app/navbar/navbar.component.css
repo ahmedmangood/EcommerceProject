@@ -1,3 +1,10 @@
+
 i {
     font-size: 25px;
+}
+li span {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    font-weight: bold;
 }

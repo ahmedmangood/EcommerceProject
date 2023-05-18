@@ -27,7 +27,7 @@ export class SigninComponent {
 
   onFormClick() {
     let msg = document.getElementById('msg')
-    msg?.classList.remove("invisible");
+    msg?.classList.remove("d-none");
     msg?.classList.add("visible");
   }
 }

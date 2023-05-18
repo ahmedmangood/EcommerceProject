@@ -14,6 +14,12 @@ import { NotfoudComponent } from './notfoud/notfoud.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderComponent } from './slider/slider.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CutTextPipe } from './pipes/cut-text.pipe';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -28,12 +34,14 @@ import { SliderComponent } from './slider/slider.component';
     NotfoudComponent,
     DetailsComponent,
     SliderComponent,
+    CutTextPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

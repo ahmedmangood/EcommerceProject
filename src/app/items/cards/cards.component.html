@@ -1,8 +1,9 @@
 <div class="card h-100">
-  <img [src]="singleItem.image" class="card-img-top img-thumbnail" alt="..." />
+  <img [src]="singleItem.thumbnail" class="card-img-top img-thumbnail" alt="..." />
   <div class="card-body">
     <h5 class="card-title">{{ singleItem.title }}</h5>
-    <p class="card-text">{{ singleItem.price | currency : "EGP" : "symbol"}}</p>
+    <p class="card-text">{{ singleItem.description | cutText : 40 }}</p>
+    <p class="card-text price">{{ singleItem.price | currency : "E£ "}}</p>
     <p
       class="card-text"
       [ngClass]="{
@@ -13,11 +14,11 @@
       {{ singleItem.stock | stock }}
     </p>
     <p class="card-text">
-      <small class="text-muted">{{singleItem.date | date : 'MMMM YYYY'}}</small>
+      <small class="text-muted">Rating: {{singleItem.rating}} &#9733; &#9733; &#9734; &#9734;</small>
     </p>
     <div class="btns-collection">
       <a (click)="showDetails(singleItem.id)" class="btn btn-primary">Show Details</a>
-      <a [routerLink]="['/cart', singleItem.id]" class="btn btn-success ms-3 my-2">Add To Cart</a>  
+      <a class="btn btn-success ms-3 my-2" (click)="addToCartList(singleItem.id, singleItem.thumbnail, singleItem.price, singleItem.title)">Add To Cart</a>
     </div>
   </div>
 </div>

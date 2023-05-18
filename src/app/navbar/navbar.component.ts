@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from '../services/counter.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  counter!: number;
+  constructor(private counterService: CounterService) {}
+  ngOnInit() {
+    this.counterService.counterValue.subscribe(res=> this.counter = res);
+  }
 }
